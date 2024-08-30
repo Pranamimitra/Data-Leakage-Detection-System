@@ -4,9 +4,6 @@
 
 Welcome to the Hermes Security Website. This project showcases our cutting-edge Data Leakage Detection System and provides a user-friendly interface for accessing various features and information about our services.
 
-![image](https://github.com/user-attachments/assets/0b10ceb2-773d-4365-826c-91b9bb53b4e3)
-
-![image](https://github.com/user-attachments/assets/2e365ee6-da5c-437d-8a26-c4e0b0bfb17b)
 
 
 
@@ -26,7 +23,8 @@ For testing purposes, use the following credentials:
 - *Username*: admin@example.com
 - *Password*: password123
 
-![image](https://github.com/user-attachments/assets/b46f3602-298e-45c5-aa0f-32668f8d7ff6)
+![image](https://github.com/user-attachments/assets/22e2a42b-8a8b-4fcb-a568-8dc75bd446c8)
+
 
 
 ## Setup
