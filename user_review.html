@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews - Hermes Security</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: rgba(235, 11, 11, 0.644);
+            padding: 1rem;
+            color: #fff;
+        }
+        .navbar a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        .review-item img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        .review-item .review-content {
+            max-width: calc(100% - 80px);
+        }
+        .review-item .review-content strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .review-item .review-content p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-semibold">Hermes Security</div>
+           
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4">User Reviews</h1>
+        <p class="mb-4">Read feedback from users about their experience with our service. Your feedback is important to us!</p>
+        
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Recent Reviews</h2>
+            <div class="review-item">
+                <img src="5.jfif" alt="John Doe">
+                <div class="review-content">
+                    <strong>John Doe</strong>
+                    <p>"Great service! The interface is user-friendly and the support team is very responsive."</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="1.jpg" alt="Jane Smith">
+                <div class="review-content">
+                    <strong>Jane Smith</strong>
+                    <p>"I appreciate the detailed insights provided by the system. It has helped me secure my data effectively."</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="2.jpg" alt="Mike Johnson">
+                <div class="review-content">
+                    <strong>Mike Johnson</strong>
+                    <p>"The software is robust, but I would love to see more customization options."</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="3.jpg" alt="Emily Brown">
+                <div class="review-content">
+                    <strong>Emily Brown</strong>
+                    <p>"Fantastic experience! The new features have really improved my productivity."</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <img src="4.png" alt="David Wilson">
+                <div class="review-content">
+                    <strong>David Wilson</strong>
+                    <p>"A bit of a learning curve, but once you get the hang of it, it's a powerful tool for data security."</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

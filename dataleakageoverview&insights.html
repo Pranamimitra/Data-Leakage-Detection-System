@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Leakage Overview & Insights - Hermes Security</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: rgba(235, 11, 11, 0.644);
+            padding: 1rem;
+            color: #fff;
+        }
+        .navbar a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        .container {
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container {
+            margin-bottom: 2rem;
+            max-width: 600px; /* Adjusted width */
+            margin: auto; /* Centered */
+        }
+        .chart {
+            width: 100%;
+            height: 300px; /* Adjusted height */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-semibold">Hermes Security</div>
+           
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4">Data Leakage Overview & Insights</h1>
+        <p class="mb-6">Here you can view insights into any detected data leakage and take necessary actions to secure your data.</p>
+
+        <div class="chart-container">
+            <h2 class="text-2xl font-semibold mb-4">Overall Data Leakage Summary</h2>
+            <canvas id="leakageSummary" class="chart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2 class="text-2xl font-semibold mb-4">Leakage by Category</h2>
+            <canvas id="leakageByCategory" class="chart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2 class="text-2xl font-semibold mb-4">Leakage Over Time</h2>
+            <canvas id="leakageOverTime" class="chart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Data Leakage Summary Pie Chart
+        var ctx1 = document.getElementById('leakageSummary').getContext('2d');
+        var leakageSummaryChart = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['Safe', 'Leaked'],
+                datasets: [{
+                    label: 'Data Leakage Summary',
+                    data: [75, 25], // Replace with actual data
+                    backgroundColor: ['#4caf50', '#f44336'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ' + context.raw + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Leakage by Category Bar Chart
+        var ctx2 = document.getElementById('leakageByCategory').getContext('2d');
+        var leakageByCategoryChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Category 1', 'Category 2', 'Category 3', 'Category 4'], // Replace with actual categories
+                datasets: [{
+                    label: 'Leakage by Category',
+                    data: [10, 20, 30, 40], // Replace with actual data
+                    backgroundColor: '#f44336',
+                    borderColor: '#d32f2f',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ' + context.raw;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Leakage Over Time Line Chart
+        var ctx3 = document.getElementById('leakageOverTime').getContext('2d');
+        var leakageOverTimeChart = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Replace with actual time periods
+                datasets: [{
+                    label: 'Leakage Over Time',
+                    data: [5, 15, 25, 20, 10, 30], // Replace with actual data
+                    backgroundColor: 'rgba(244, 67, 54, 0.2)',
+                    borderColor: '#f44336',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ' + context.raw;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
